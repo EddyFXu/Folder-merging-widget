@@ -1,6 +1,23 @@
-# 文件夹合并工具 (Folder Merger)
+# 文件夹合并工具 (Folder Merging Widget)
 
-这是一个用于合并文件夹并重组文件结构的 Python 脚本工具。它可以将一个包含多个子文件夹的目录下的所有文件提取出来，合并到一个或多个目标文件夹中，并支持重命名、冲突处理和分包功能。
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
+![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+这是一个基于 Python 和 Tkinter 开发的文件夹合并与整理工具。它可以帮助你将多个子文件夹中的文件合并到一个或多个目标文件夹中，并支持按数量分包、自动重命名、冲突处理等功能。
+
+## 📅 版本历史
+
+### v1.1.0 (2026-02-07)
+- **新增**: 智能填充逻辑。程序现在会优先填满所有已存在但不满足数量限制的 `Merged_N` 文件夹（包括中间缺失的编号），最大化利用空间。
+- **新增**: 应用程序图标。
+- **优化**: 配置文件加载逻辑，增强 EXE 兼容性。
+
+### v1.0.0
+- 初始版本发布。
+- 支持复制/移动模式。
+- 支持文件数量分包。
+- 支持重命名和冲突处理。
 
 ## 功能特性
 

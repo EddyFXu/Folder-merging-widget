@@ -232,7 +232,7 @@ class MergerCore:
 class App:
     def __init__(self, root):
         self.root = root
-        self.root.title("文件夹合并工具 v1.0")
+        self.root.title("文件夹合并工具 v1.1.0")
         self.root.geometry("900x700")
         
         self.core = None
