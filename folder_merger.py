@@ -23,6 +23,13 @@ def get_application_path():
         # 如果是脚本，__file__ 是脚本的路径
         return os.path.dirname(os.path.abspath(__file__))
 
+def get_resource_path(relative_path):
+    """获取资源文件的绝对路径（兼容开发和 Frozen 模式）"""
+    if hasattr(sys, '_MEIPASS'):
+        # PyInstaller 打包后的临时目录
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
+
 CONFIG_FILE = os.path.join(get_application_path(), 'merger_config.json')
 
 class MergerCore:
@@ -234,6 +241,14 @@ class App:
         self.root = root
         self.root.title("文件夹合并工具 v1.1.0")
         self.root.geometry("900x700")
+
+        # 设置窗口图标
+        try:
+            icon_path = get_resource_path('app_icon.ico')
+            if os.path.exists(icon_path):
+                self.root.iconbitmap(icon_path)
+        except Exception as e:
+            print(f"Failed to set icon: {e}")
         
         self.core = None
         self.thread = None
